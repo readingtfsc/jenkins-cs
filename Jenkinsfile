@@ -7,6 +7,7 @@ pipeline {
            
             steps {
                 echo 'Hello World2,1111112'
+                go env
             }
         }
     }
