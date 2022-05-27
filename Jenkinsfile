@@ -1,6 +1,16 @@
 pipeline {
     agent any
 
+    parameters {
+         gitParameter name: 'BRANCH_TAG', 
+                     type: 'PT_BRANCH_TAG',
+                     branchFilter: 'origin/(.*)',
+                     defaultValue: 'master',
+                     selectedValue: 'DEFAULT',
+                     sortMode: 'DESCENDING_SMART',
+					 description: 'Select your branch or tag.'
+		choice(name: 'SonarQube', choices: ['False','True'],description: '')	
+    }
     stages {
         stage('Example') { 
             steps {
