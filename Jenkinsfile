@@ -19,6 +19,13 @@ pipeline {
                 }
             }
         }
+           stage('Test') {
+            steps {
+                script{
+                    sh 'go test -cover ./..'
+                }
+            }
+        }
         stage('Build') {
             steps {
                 script{
