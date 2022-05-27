@@ -2,20 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('Example') {
-        
-           
+        stage('Example') { 
             steps {
                             echo 'ssssin!'
-
             }
         }
-          stage('Example2') {
-        
-           
+        stage('Example2') {
             steps {
                             echo 'ssssin2!'
-
+            }
+        }
+          stage('Clone Code From Github') {
+            steps {
+                script{
+                    go env
+                }
             }
         }
     }
