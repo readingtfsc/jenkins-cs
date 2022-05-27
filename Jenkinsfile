@@ -6,8 +6,21 @@ pipeline {
         
            
             steps {
-                echo 'Hello World2,1111112';
                 go env
+            }
+        }
+         stage('Example2') {
+        
+           
+            steps {
+                go test -v -cover ./...
+            }
+        }
+           stage('Example3') {
+        
+           
+            steps {
+                go build -o cs mian.go
             }
         }
     }
