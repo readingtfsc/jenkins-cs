@@ -22,7 +22,7 @@ pipeline {
            stage('Test') {
             steps {
                 script{
-                    sh 'go test -cover ./..'
+                    sh 'go test -v -cover ./...'
                 }
             }
         }
