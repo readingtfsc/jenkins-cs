@@ -12,13 +12,28 @@ pipeline {
                             echo 'ssssin2!'
             }
         }
-          stage('Clone Code From Github') {
+        stage('print go-env') {
             steps {
                 script{
                     sh 'go env'
                 }
             }
         }
+        stage('Build') {
+            steps {
+                script{
+                    sh 'go build -o cs mian.go'
+                }
+            }
+        }
+          stage('Exec') {
+            steps {
+                script{
+                    sh './cs'
+                }
+            }
+        }
+        
     }
     post {
         always {
