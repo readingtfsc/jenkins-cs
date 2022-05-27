@@ -22,7 +22,7 @@ pipeline {
         stage('Build') {
             steps {
                 script{
-                    sh 'go build -o cs mian.go'
+                    sh 'go build -o cs ./mian.go'
                 }
             }
         }
