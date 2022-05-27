@@ -15,7 +15,7 @@ pipeline {
           stage('Clone Code From Github') {
             steps {
                 script{
-                    sh go env
+                    sh 'go env'
                 }
             }
         }
