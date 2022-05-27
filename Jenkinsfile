@@ -6,7 +6,16 @@ pipeline {
         
            
             steps {
-                go env
+                            echo 'ssssin!'
+
+            }
+        }
+          stage('Example2') {
+        
+           
+            steps {
+                            echo 'ssssin2!'
+
             }
         }
     }
