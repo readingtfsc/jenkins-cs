@@ -10,18 +10,6 @@ pipeline {
                 }
             }
     }
-    stages{
-             stage('TestCover1') {
-                    steps {
-                        step {
-                                                echo 'Hello World11'
-                        }
-                        step {
-                                                echo 'Hello World12'
-                        }
-                    }
-                }
-    }
 
     post {
         always {
