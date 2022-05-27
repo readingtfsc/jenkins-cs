@@ -11,7 +11,7 @@ pipeline {
 					 description: 'Select your branch or tag.'
 		choice(name: 'SonarQube', choices: ['False','True'],description: '')
 	     imageTag(name: 'DOCKER_IMAGE', description: '',
-             image: 'jenkins/jenkins', filter: 'lts.*', defaultTag: 'lts-jdk11',
+             image: 'jenkins/jenkins', filter: '*', defaultTag: 'lts-jdk11',
              registry: 'https://registry-1.docker.io', credentialId: '', tagOrder: 'NATURAL')
     }
     stages {
