@@ -19,9 +19,17 @@ pipeline {
                 }
             }
         }
+         stage('Clone') {
+            steps {
+                script{
+                    sh 'git clone -b main https://github.com/readingtfsc/jenkins-cs.git'
+                }
+            }
+        }
         stage('Build') {
             steps {
                 script{
+                    sh 'cd jenkins-cs'
                     sh 'go build -o cs ./mian.go'
                 }
             }
